@@ -6,7 +6,7 @@ puts "Hi! Would you like to join me for a little game of Tic-Tac-Toe?"
 answer = gets.chomp.downcase
 
 if answer = "yes" || answer = "y"  || answer = "ok" || answer = "okay" || answer = "yeah"
-             puts "Great. Let'splay! \n \n You will be \"X\", and I will be \"O.\" "
+             puts "Great. Let'splay! \n \n You will be \"X\", and I will be \"O."
 
 
             gboard = {
@@ -21,9 +21,9 @@ if answer = "yes" || answer = "y"  || answer = "ok" || answer = "okay" || answer
                      9 => 9,
            }
 
-               gboard_grid =
 
-                      "   #{gboard[1]}      |    #{gboard[2]}    |     #{gboard[3]}\n
+             gboard_grid =
+                                                                              "\n                          #{gboard[1]}      |    #{gboard[2]}    |     #{gboard[3]}\n
                       --------------------------------\n
                          #{gboard[4]}       |   #{gboard[5]}    |     #{gboard[6]}\n
                       --------------------------------\n
