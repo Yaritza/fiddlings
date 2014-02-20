@@ -1,11 +1,11 @@
 require_relative 'game'
 require 'pry'
 
-puts "Hi! Would you like to join me for a little game of Tic-Tac-Toe?"
+puts "Hi! Would you like to join me for a little game of Tic-Tac-Toe? y\/n\?"
 
 answer = gets.chomp.downcase
 
-if answer = "yes" || answer = "y"  || answer = "ok" || answer = "okay" || answer = "yeah"
+if answer == "y"
              puts "Great. Let'splay! \n \n You will be \"X\", and I will be \"O."
 
 
