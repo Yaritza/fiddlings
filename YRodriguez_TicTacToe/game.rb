@@ -12,64 +12,74 @@ class Tic_tac_toe
             def initialize (gboard, position, gboard_grid)
                     @gboard = gboard
                     @position = position
-                    @gboard_grid =gboard_grid
+                    @gboard_grid = gboard_grid
             end
 
 
             def draw (position)
-                     # check if players choosen position is taken before making with an "X".
-                      if gboard[@positon].class == Integer ###NOT REAL CODE!
+                     # checks if players choosen position is taken before marking gboard with a new "X".
+
+                      if gboard[@position] != "X" && gboard[@position] != "O" ?
                             gboard[@position] = "X"
                             puts gboard_grid
                       end
 
 
-                      #Check for winning consecutive markers.  Since player starts the game,
-                      #we assume winning markers at this step should be "X"s.
+                      #Check for winning consecutive markers immediately after player's draw.
+                      # If there is a win, since the  players  was the last to draw, he/she is ideclares the wineer.
 
-                      if gboard[1] == gboard[2] && gboard[2] == gboard[3] ||
-                            gboard[4] == gboard[5] && gboard[5] == gboard[6] ||
-                            gboard[7] == gboard[8] && gboard[8] == gboard[9] ||
-                            gboard[1] == gboard[4] && gboard[4] == gboard[7] ||
-                            gboard[2] == gboard[5] && gboard[5] == gboard[8] ||
-                            gboard[3] == gboard[6] && gboard[6] == gboard[9] ||
-                            gboard[3] == gboard[5] && gboard[5] == gboard[7] ||
-                            gboard[1] == gboard[5] && gboard[5] == gboard[9]
 
-                            puts "You won! Game over."
+                      winner = "n"
 
-                            elsif
+                      until winner == "y"
 
-                            #Generates random number for bot from 1 to 9.
-                            bot_draw =  rand(1..9)
+                            if gboard[1] == gboard[2] && gboard[2] == gboard[3] ||
+                                  gboard[4] == gboard[5] && gboard[5] == gboard[6] ||
+                                  gboard[7] == gboard[8] && gboard[8] == gboard[9] ||
+                                  gboard[1] == gboard[4] && gboard[4] == gboard[7] ||
+                                  gboard[2] == gboard[5] && gboard[5] == gboard[8] ||
+                                  gboard[3] == gboard[6] && gboard[6] == gboard[9] ||
+                                  gboard[3] == gboard[5] && gboard[5] == gboard[7] ||
+                                  gboard[1] == gboard[5] && gboard[5] == gboard[9]
 
-                                  # check if bot's choosen position is taken before making with an "O".
-                                  if gboard[bot_draw].Integer?
-                                  gboard[bot_draw] = "O"
 
-                            else bot_draw = rand(1..9)
+                                  puts "You win! Game over."
+                                  winner = "y"
 
+                                  elseif
+
+                                  #Generates random number for bot from 1 to 9.
+                                  bot_draw =  rand(1..9)
+
+                                        # check if bot's choosen position is taken before making with an "O".
+                                        #but needs further developing to loop so bot_draw keeps reseting until it finds a an unclaimed spot on the gboard.
+
+                                        if gboard[bot_draw] != "X" && gboard[bot_draw] != "O" ?
+
+                                        gboard[bot_draw] = "O"
+
+                                  else bot_draw = rand(1..9)
+
+                            end
+
+                            puts gboard_grid
+
+                             # Checks if bot's move wins at this step.
+                             if   gboard[1] == gboard[2] &&  gboard[2] == gboard[3] ||
+                                  gboard[4] == gboard[5] && gboard[5] == gboard[6] ||
+                                  gboard[7] == gboard[8] && gboard[8] == gboard[9] ||
+                                  gboard[1] == gboard[4] && gboard[4] == gboard[7] ||
+                                  gboard[2] == gboard[5] && gboard[5] == gboard[8] ||
+                                  gboard[3] == gboard[6] && gboard[6] == gboard[9] ||
+                                  gboard[3] == gboard[5] && gboard[5] == gboard[7] ||
+                                  gboard[1] == gboard[5] && gboard[5] == gboard[9]
+
+                                  puts "I won! Game over."
+                                  winner = "y"
+                            end
                       end
-
-                      puts gboard_grid
-
-                      end
-
-                       # Checks if bot's move wins at this step.
-                       if   gboard[1] == gboard[2] &&  gboard[2] == gboard[3] ||
-                            gboard[4] == gboard[5] && gboard[5] == gboard[6] ||
-                            gboard[7] == gboard[8] && gboard[8] == gboard[9] ||
-                            gboard[1] == gboard[4] && gboard[4] == gboard[7] ||
-                            gboard[2] == gboard[5] && gboard[5] == gboard[8] ||
-                            gboard[3] == gboard[6] && gboard[6] == gboard[9] ||
-                            gboard[3] == gboard[5] && gboard[5] == gboard[7] ||
-                            gboard[1] == gboard[5] && gboard[5] == gboard[9]
-
-                            puts "I won! Game over."
-                       end
-
 
             end
 
-
+end
 end

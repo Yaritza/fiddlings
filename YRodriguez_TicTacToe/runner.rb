@@ -22,7 +22,7 @@ if answer == "y"
            }
 
 
-             gboard_grid =
+           gboard_grid =
                                                                               "\n                          #{gboard[1]}      |    #{gboard[2]}    |     #{gboard[3]}\n
                       --------------------------------\n
                          #{gboard[4]}       |   #{gboard[5]}    |     #{gboard[6]}\n
@@ -43,9 +43,9 @@ if answer == "y"
                             position = gets.chomp.to_i
                       end
 
-            game = Tic_tac_toe.new(gboard, position, gboard_grid)
-            puts "#{game.draw(position)}"  #<--\n -----SOMETHINING IS OFF HERE!
 
+            game = Tic_tac_toe.new(gboard, position, gboard_grid)
+            puts game.draw(position)
 else
 
             puts "Ah, perhaps some other time. Good-bye..."
